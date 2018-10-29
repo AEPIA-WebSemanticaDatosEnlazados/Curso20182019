@@ -1,9 +1,9 @@
 Curso 2018-2019
 ================
 
-Este es el repositorio que utilizaremos para nuestro trabajo colaborativo, y para llevar a cabo las entregas de la asignatura.
+Este es el repositorio que utilizaremos para nuestro trabajo colaborativo, y para llevar a cabo las entregas de la asignatura. Recuerda que tienes instrucciones mas detalladas sobre el trabajo [aquí](https://docs.google.com/document/d/e/2PACX-1vQrfa6nrN-4nbLWARcyWrY5AxN9lbwRMbT9OuwGHTSXwfQUN5ak7a945mgsuqt7QSPZ5fvYUbh_oZQk/pub)
 
-Este es el proceso normal que el alumno tendrá que seguir:
+A nivel técnico, este es el proceso normal que el alumno tendrá que seguir:
 
 * Realizar un Fork al repositorio principal en tu propia cuenta (esto generará un nuevo repositorio en tu cuenta de GitHub). Este paso se realiza solo una vez en el curso. En este repositori deberás crear un directorio con tu nombre, donde estarán los documentos y datos de tu trabajo.
 
