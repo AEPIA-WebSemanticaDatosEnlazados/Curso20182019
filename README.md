@@ -1,11 +1,11 @@
 Curso 2018-2019
 ================
 
-Este es el repositorio que utilizaremos para nuestro trabajo colaborativo, y para llevar a cabo las entregas parciales y finales de la asignatura.
+Este es el repositorio que utilizaremos para nuestro trabajo colaborativo, y para llevar a cabo las entregas de la asignatura.
 
 Este es el proceso normal que el alumno tendrá que seguir:
 
-* Realizar un Fork al repositorio principal en tu propia cuenta (esto generará un nuevo repositorio en tu cuenta de GitHub). Este paso se realiza solo una vez en el curso.
+* Realizar un Fork al repositorio principal en tu propia cuenta (esto generará un nuevo repositorio en tu cuenta de GitHub). Este paso se realiza solo una vez en el curso. En este repositori deberás crear un directorio con tu nombre, donde estarán los documentos y datos de tu trabajo.
 
 * Si ya has realizado el fork sobre este repositorio, deberás sincronizar tu repositorio con la versión actual. Para ello debes [configurar un remote para el fork](https://help.github.com/articles/configuring-a-remote-for-a-fork) y [sincronizar tu fork](https://help.github.com/articles/syncing-a-fork). Básicamente debe:
  * Establece el remote: 
