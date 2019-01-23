@@ -1,0 +1,25 @@
+Catalonia
+Cataluna
+Cataluña -> base
+
+
+--------------------
+
+Castilla y Leon
+Castilla y León -> base
+Castilla y Léon
+
+--------------------
+
+Aragon
+Aragón -> base
+
+--------------------
+
+Tereul
+Teruel -> base
+
+--------------------
+
+Valencia -> base
+Valenciana
