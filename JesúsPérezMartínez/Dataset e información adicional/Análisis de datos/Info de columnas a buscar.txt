@@ -1,0 +1,18 @@
+occurrence_no
+collection_no
+identified_no
+accepted_no
+reference_no
+latlng_precision -> sobre sus valores
+formation -> concepto
+stratscale -> concepto
+lithology_main -> concepto
+environment
+authorizer_no
+enterer_no
+modifier_no
+authorizer
+enterer
+modifier
+paleolng
+paleolat

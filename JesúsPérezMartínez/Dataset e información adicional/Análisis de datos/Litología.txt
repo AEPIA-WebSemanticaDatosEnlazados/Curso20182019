@@ -1,0 +1,4 @@
+"claystone" -> claystone
+"limestone" -> limestone
+"shale" -> shale
+"siliciclastic" -> siliciclastic
