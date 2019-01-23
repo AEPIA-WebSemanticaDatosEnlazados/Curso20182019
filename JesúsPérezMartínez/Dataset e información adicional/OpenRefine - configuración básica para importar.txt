@@ -1,0 +1,5 @@
+Character encoding 	UTF-8
+
+Columns are separated by commas (CSV)
+
+Ignore first 18 lines at begining

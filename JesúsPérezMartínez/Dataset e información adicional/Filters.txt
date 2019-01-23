@@ -1,0 +1,3 @@
+    Map extent - ([38, -7], [42, 4])
+    Interval - Mesozoic
+    Taxon - Chordata
