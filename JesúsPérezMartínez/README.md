@@ -32,7 +32,8 @@ Personalmente, me ha parecido muy interesante usar esta base de datos en este tr
 Tal y como se indica, sólo hemos elegido aquellos registros fósiles de vertebrados (*Chordata*) que pertenecen a la época de los dinosaurios (Mesozoico).
 
 ### 2.2. Análisis de datos
- 
+Columnas eliminadas
+
 | Nombre de la columna | Motivo |
 |---------|---------|
 |flags | Información interna de la aplicación |
@@ -75,6 +76,18 @@ Tal y como se indica, sólo hemos elegido aquellos registros fósiles de vertebr
 | geoplate | Información interna de la aplicación |
 | paleolng | Información interna de la aplicación |
 | paleolat | Información interna de la aplicación |
+
+Valores renombrados
+
+Lugares
+
+| Ocurrencia(s) | Modificado por |
+|--------------|-----------------|
+| Catalonia, Cataluna | Cataluña |
+| Castilla y Leon, Castilla y Léon | Castilla y León |
+| Aragon | Aragón |
+| Tereul | Teruel |
+| Valenciana | Valencia |
 
 
 ### 2.3. Estrategia de nombrado
