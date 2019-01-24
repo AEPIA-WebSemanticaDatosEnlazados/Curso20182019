@@ -36,3 +36,5 @@ created
 modified
 paleomodel
 geoplate
+paleolng
+paleolat
