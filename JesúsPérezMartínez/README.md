@@ -1,14 +1,22 @@
 <img src="icon.png" align="right" height="250" width="250"/>
 
 # PaleoSW: fósiles y yacimientos paleontológicos en la web semántica 
- Trabajo final de la asignatura Web semántica y datos enlazados.
+ Trabajo final de la asignatura Web Semántica y Datos Enlazados.
  
  Realizado por: Jesús Pérez Martínez.
  
  Curso 2018-2019
  
 ## 1. Intoducción
+El presente trabajo busca abordar y llevar a la práctica los conocimientos adquiridos en la asignatura "Web Semántica y Datos enlazados" del Máster en Investigación en Inteligencia Artificial. La Web semántica busca cambiar el modelo Web actual, añadiendo significado a la información mostrada, además de enlazar las relaciones entre los diferentes conceptos. Actualmente, existen multitud de sistemas y aplicaciones que usan los estándares y tecnologías definidas y desarrolladas al amparo del World Wide Web Consortium (W3C). Estas tecnologías destacan por su gran utilidad, transparencia y facilidad de reutilización en gran cantidad de proyectos y aplicaciones.
+
+Por este motivo, tomando como punto de partida una porción del conjunto de datos total que podemos encontrar en <a href="https://paleobiodb.org/">The Paleobiology Database</a>, trataremos de traducir de una manera clara y versátil el conjunto de datos inicial (en formato *.csv*), a un grafo RDF. Este grafo, junto con el uso de una ontología, permitirá el enlazado de los conceptos de nuestra base de datos con los ya existentes en la Web. Por último, se creará una pequeña aplicación que permitirá la explotación del grafo para extraer información de utilidad.
+
 ## 2. Proceso de transformación
+A lo largo de los siguientes puntos, se describirán cada uno de los puntos principales desde la eleción de la base de datos hasta su publicación. Así pues, comenzaremos explicando el contexto y las características del *dataset* y su licencia, para posteriormente analizarlo y adaptarlo a nuestra idea de grafo final. Proseguiremos definiendo la estrategia de nombrado de recursos y el desarrollo del vocabulario, donde se creará la ontología que usaremos en la transformación de la base de datos al grafo RDF.
+
+Tras finalizar este bloque, se estudiará y definirá el enlazado de los recursos de nuestro grafo con los encontrados en la Web antes de realizar la publicación correspondiente.
+
 ### 2.1. Selección de la fuente de datos
 ### 2.2. Análisis de datos
 ### 2.3. Estrategia de nombrado
