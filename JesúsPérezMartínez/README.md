@@ -1,4 +1,4 @@
-<img src="/images/icon.png" align="right" height="166" width="200"/>
+<img src="images/icon.png" align="right" height="166" width="200"/>
 
 # PaleoSW: fósiles y yacimientos paleontológicos en la web semántica 
  Trabajo final de la asignatura Web Semántica y Datos Enlazados.
@@ -20,7 +20,7 @@ Tras finalizar este bloque, se estudiará y definirá el enlazado de los recurso
 ### 2.1. Selección de la fuente de datos
 La fuente de datos que usaremos como base es una porción de The Paleobiology Database (en adelante **PBDB**), correspondiente a la mitad este de la Península Ibérica y las Islas Baleares. PBDB es una base de datos pública de información paleontológica abierta, mantenida por un grupo internacional no gubernamental de paleontólogos. Permite explorar los datos desde el navegador y descargar los datos para analizarlos. Toda la información se encuentra bajo la licencia de Creative Commons **CC BY 4.0 International License**, que permite distribuir y modificar el contenido siempre que se atribuya la autoría del mismo.
 
-<img src="/images/pbdb_black.png" align="center" height="250" width="250"/>
+<img src="images/pbdb_black.png" align="center" height="350" width="420"/>
 
 Personalmente, me ha parecido muy interesante usar esta base de datos en este trabajo, dado que no existe información clara y precisa en la Web semántica actual sobre los datos que en este *dataset* se abordan. El conjunto de datos descargado contiene **1842 registros** y ha sido obtenido del original (con 1371645 registros totales) aplicando los siguientes filtros que nos permite la <a href="https://paleobiodb.org/navigator/">aplicación web</a>:
 * **Map extent**: ([38, -7], [42, 4])
