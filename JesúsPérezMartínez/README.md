@@ -18,6 +18,15 @@ A lo largo de los siguientes puntos, se describirán cada uno de los puntos prin
 Tras finalizar este bloque, se estudiará y definirá el enlazado de los recursos de nuestro grafo con los encontrados en la Web antes de realizar la publicación correspondiente.
 
 ### 2.1. Selección de la fuente de datos
+La fuente de datos que usaremos como base es una porción de The Paleobiology Database (en adelante **PBDB**), correspondiente a la mitad este de la Península Ibérica y las Islas Baleares. PBDB es una base de datos pública de información paleontológica abierta, mantenida por un grupo internacional no gubernamental de paleontólogos. Permite explorar los datos desde el navegador y descargar los datos para analizarlos. Toda la información se encuentra bajo la licencia de Creative Commons **CC BY 4.0 International License**, que permite distribuir y modificar el contenido siempre que se atribuya la autoría del mismo.
+
+Personalmente, me ha parecido muy interesante usar esta base de datos en este trabajo, dado que no existe información clara y precisa en la Web semántica actual sobre los datos que en este *dataset* se abordan. El conjunto de datos descargado contiene **1842 registros** y ha sido obtenido del original (con 1371645 registros totales) aplicando los siguientes filtros que nos permite la aplicación web:
+* **Map extent**: ([38, -7], [42, 4])
+* **Interval**: Mesozoic
+* **Taxon**: Chordata
+
+Tal y como se indica, sólo hemos elegido aquellos registros fósiles de vertebrados (*Chordata*) que pertenecen a la época de los dinosaurios (Mesozoico).
+
 ### 2.2. Análisis de datos
 ### 2.3. Estrategia de nombrado
 ### 2.4. Desarrollo del vocabulario
