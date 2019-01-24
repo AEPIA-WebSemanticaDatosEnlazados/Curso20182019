@@ -1,4 +1,4 @@
-<img src="icon.png" align="right" height="250" width="250"/>
+<img src="icon.png" align="right" height="166" width="200"/>
 
 # PaleoSW: fósiles y yacimientos paleontológicos en la web semántica 
  Trabajo final de la asignatura Web Semántica y Datos Enlazados.
