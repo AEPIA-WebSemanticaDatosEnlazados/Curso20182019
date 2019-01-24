@@ -32,7 +32,31 @@ Personalmente, me ha parecido muy interesante usar esta base de datos en este tr
 Tal y como se indica, sólo hemos elegido aquellos registros fósiles de vertebrados (*Chordata*) que pertenecen a la época de los dinosaurios (Mesozoico).
 
 ### 2.2. Análisis de datos
-Columnas eliminadas
+#### Licencias
+Comenzaremos este punto abordando más en detalle la licencia de los datos originales. Como hemos comentado previamente, se trata de una licencia <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0 International License</a>, cuyo icono aparece representado a continuación:
+
+<p align="center">
+<a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Licencia de Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a>
+ </p>
+ 
+ Esta licencia, según la web oficial de Creative Commons, tiene las siguientes implicaciones:
+ * **Libertad de**:
+     * Compartir: copiar y redistribuir el material en cualquier medio o formato.
+     * Adaptar: remezclar, transformar y construir sobre el material para cualquier propósito, incluso comercialmente.
+ * **Deber de**:
+     * Reconocimiento: debe otorgar el crédito correspondiente, proporcionar un enlace a la licencia e indicar si se realizaron cambios. Puede hacerlo de cualquier manera razonable, pero no de una manera que sugiera que tiene el apoyo del licenciador o lo recibe por el uso que hace.
+     
+Por lo tanto, usaremos la misma licencia para los datos transformados que se generen a partir de este proyecto.
+
+Ahora pasaremos a analizar el conjunto de datos haciendo uso de la herramienta *OpenRefine*. Primero cargamos el *dataset* con las siguientes opciones proporcionadas por el programa:
+
+* Character encoding: 	UTF-8
+* Columns are separated by commas (CSV)
+* Ignore first 18 lines at begining
+
+#### Columnas eliminadas
+
+Tras esto, ya podemos trabajar con el *dataset*. Si estudiamos las *facets* generadas sobre cada una de las columnas, descubriremos que la gran mayoría de las mismas no nos van a ser útiles para nuestro grafo final, y por lo tanto las eliminaremos de nuestro *dataset*. A continuación, se muestran todas las columnas eliminadas y su correspondiente motivo:
 
 | Nombre de la columna | Motivo |
 |---------|---------|
@@ -77,9 +101,12 @@ Columnas eliminadas
 | paleolng | Información interna de la aplicación |
 | paleolat | Información interna de la aplicación |
 
-Valores renombrados
+Tras eliminar todas las columnas anteriores, nuestro *dataset* se quedará con 28 columnas, de las cuales tendremos que realizar ciertos retoques para evitar errores en los valores. Esto se conseguirá, de nuevo, haciendo uso de las *facets* (para texto) que nos permite *OpenRefine*.
 
-Lugares
+#### Valores renombrados
+Debido a la eliminación de lithology2 y columnas relacionadas que dan información adicional de la litología, renombraremos la columna *lithology1* a *main_lithology*, con el fin de usar en un futuro unicamente el valor principal de este campo y evitar posibles errores de claridad y concisión.
+
+Si hacemos un *facet* sobre la columna *state*, observamos que también hay unos cuantos valores mal escritos, que no se corresponden con nombres reales. Estos valores y sus modificaciones son los siguientes:
 
 | Ocurrencia(s) | Modificado por |
 |--------------|-----------------|
@@ -89,6 +116,56 @@ Lugares
 | Tereul | Teruel |
 | Valenciana | Valencia |
 
+También encontramos diferentes cadenas de caracteres que indican un mismo valor, o que están escritos en un formato diferente al resto, dentro de la columna *environment* y *main_lithology*. En ambos casos encontramos algunos valores entre comillas, cuando en cambio la gran mayoría de los valores con los que comparten columna no tienen esta característica de formato. A continuación vemos las modificaciones para la columna *environment*:
+
+| Ocurrencia | Modificado por |
+|--------------|-----------------|
+| "channel" | channel |
+| "floodplain" | floodplain |
+
+Y para la columna *main_lithology*:
+
+| Ocurrencia | Modificado por |
+|--------------|-----------------|
+| "claystone" | claystone |
+| "limestone" | limestone |
+| "shale" | shale |
+| "siliciclastic" | siliciclastic |
+
+#### Análisis del *dataset* final
+
+A continuación, representaremos más en detalle el significado y algunos datos de interés para la futura transformación y explotación de las 28 columnas que componen nuestro conjunto de datos final. Las descripciones se han obtenido desde la <a href="https://paleobiodb.org/data1.2/">documentación oficial de PBDB</a>. 
+
+| Nombre de la columna | Tipo | Rango | Breve descripción |
+|----------------------|------|-------|-------------------|
+| occurrence_no | String |  |  ID que representa la existencia de un organismo particular en un espacio y tiempo determinados. Valor único para cada hayazgo |
+| collection_no | String | | ID que representa un conjunto de hayazgos que están ubicados en el mismo lugar geográfico y temporal |
+| identified_name | String | | Nombre con el que se ha identificado al organismo |
+| identified_rank | String | 14 posibles valores | Categoría taxonómica a la que pertenece el hayazgo |
+| identified_no | String |  | ID del nombre con el que se ha identificado al organismo |
+| accepted_name | String |  | Nombre final que se le ha dado al organismo |
+| accepted_no | String |  | ID del nombre final que se le ha dado al organismo. Puede coincidir con *identified_no* |
+| early_interval | String | 44 posibles valores | Intervalo geológico inicial del hayazgo, en base a los estándares proporcionados por la <a href="http://www.stratigraphy.org/">Comisión Internacional de Estratigrafía</a> |
+| max_ma | Number | 70.00 - 260.00 | Edad máxima del hayazgo (en millones de años) |
+| min_ma | Number | 60.00 - 250.00 | Edad mínima del hayazgo (en millones de años) |
+| reference_no | String |  |  |
+| lng | Number | (-7) - 4 | Coordenada angular de longitud del hayazgo (aproximada) |
+| lat | Number | 38 - 42 | Coordenada angular de latitud del hayazgo (aproximada) |
+| cc | String | Valor único (ES) | Country code (Código de país) |
+| state | String | 19 posibles valores | Provincia / CCAA |
+| county | String | 45 posibles valores | Municipio |
+| latlng_precision | String | 10 posibles valores | Precisión del punto geográfico marcado respecto al valor real |
+| formation | String | 58 posibles valores | Formación geológica del hayazgo |
+| stratscale | String | 5 posibles valores |  | 
+| localsection | String | 21 posibles valores | Nombre del yacimiento |
+| lithology_main | String | 18 posibles valores | Compuesto mineral principal |
+| Environment | String | 34 posibles valores | Tipo de entorno en el que se encuentra el hayazgo |
+| authorizer_no | String |  | ID de la persona encargada de autorizar añadir el hayazgo en la base de datos |
+| enterer_no | String |  | ID de la persona encargada de añadir el hayazgo en la base de datos |
+| modifier_no | String |  | ID de la persona encargada de modificar el hayazgo en la base de datos |
+| authorizer | String | 15 posibles valores | Nombre de la persona encargada de autorizar añadir el hayazgo en la base de datos |
+| enterer | String | 28 posibles valores | Nombre de la persona encargada de autorizar añadir el hayazgo en la base de datos |
+| modifier | String | 14 posibles valores | Nombre de la persona encargada de autorizar añadir el hayazgo en la base de datos |
 
 ### 2.3. Estrategia de nombrado
 ### 2.4. Desarrollo del vocabulario
