@@ -1,1 +1,0 @@
-lithology1 -> main_lithology ; Debido a la eliminación de lithology2 y columnas relacionadas que dan información adicional de la litología
