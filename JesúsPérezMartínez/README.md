@@ -171,6 +171,13 @@ Para concluir este punto, representaremos más en detalle el significado y algun
 
 ### 2.3. Estrategia de nombrado
 ### 2.4. Desarrollo del vocabulario
+
+Ontologías base:
+* Taxones: http://lod.taxonconcept.org/ontology/taxon.owl#Taxon
+* Era geológica y ¿formación estrato?: http://resource.geosciml.org/ontology/timescale/gts#GeologicTimescale
+* Litología: http://dati.isprambiente.it/ontology/core/#lithologyType
+* Lugares: https://schema.org/Place
+* Coordenadas: https://schema.org/GeoCoordinates
 ### 2.5. Proceso de transformación
 ### 2.6. Enlazado
 ### 2.7. Publicación
