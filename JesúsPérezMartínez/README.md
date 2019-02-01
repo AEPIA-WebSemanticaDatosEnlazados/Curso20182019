@@ -170,6 +170,14 @@ Para concluir este punto, representaremos más en detalle el significado y algun
 **NOTA: ES POSIBLE QUE LOS DATOS PROPORCIONADOS EN ESTE PUNTO SEAN ELIMINADOS O MODIFICADOS DEPENDIENDO DEL DESARROLLO DEL TRABAJO** 
 
 ### 2.3. Estrategia de nombrado
+
+A continuación, definimos la estrategia de nombrado de recursos siguiendo las indicaciones habituales que definen el uso del caracter almohadilla para términos ontológicos, y la barra inclinada para individuos. A continuación aparece más detalladamente con sus URIs correspondientes:
+* **Dominio**: http://paleosw.org/
+* **Ruta para términos ontológicos**: http://paleosw.org/vocabulary#
+* **Patrón para términos ontológicos**: http://paleosw.org/vocabulary#<term_name>
+* **Ruta para individuos**: http://paleosw.org/resources/
+* **Patrón para individuos**: http://paleosw.org/resources/<resource_name>
+
 ### 2.4. Desarrollo del vocabulario
 
 Ontologías base:
