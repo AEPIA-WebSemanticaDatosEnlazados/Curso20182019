@@ -188,6 +188,14 @@ Ontologías base:
 * Coordenadas: https://schema.org/GeoCoordinates
 ### 2.5. Proceso de transformación
 ### 2.6. Enlazado
+| Nombre de la columna | Clase enlazada |
+|----------------------|------|
+| state | schema:Place |
+| county | yago:Municipality108626283 |
+| lithology_main | yago:Material114580897 |
+| early_interval | skos:Concept |
+| identified_rank | dbo:Taxon |
+| early_interval | dbc:Geological_ages |
 ### 2.7. Publicación
 ## 3. Aplicación y explotación
 ## 4. Conclusiones
