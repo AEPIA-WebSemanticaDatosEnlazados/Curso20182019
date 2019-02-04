@@ -100,6 +100,9 @@ Tras esto, ya podemos trabajar con el *dataset*. Si estudiamos las *facets* gene
 | geoplate | Información interna de la aplicación |
 | paleolng | Información interna de la aplicación |
 | paleolat | Información interna de la aplicación |
+| identified_name | Nombre con el que se ha identificado en primer lugar al organismo |
+| identified_no | ID del nombre con el que se ha identificado en primer lugar al organismo |
+| accepted_no | ID del nombre final que se le ha dado al organismo. Puede coincidir con *identified_no* |
 
 Tras eliminar todas las columnas anteriores, nuestro *dataset* se quedará con 28 columnas, sobre las que tendremos que realizar ciertos retoques para evitar errores en los valores. Esto se conseguirá, de nuevo, haciendo uso de las *facets* (para texto) que nos permite *OpenRefine*.
 
@@ -140,11 +143,8 @@ Para concluir este punto, representaremos más en detalle el significado y algun
 |----------------------|------|-------|-------------------|
 | occurrence_no | String |  |  ID que representa la existencia de un organismo particular en un espacio y tiempo determinados. Valor único para cada hayazgo |
 | collection_no | String | | ID que representa un conjunto de hayazgos que están ubicados en el mismo tiempo y lugar geográfico |
-| identified_name | String | | Nombre con el que se ha identificado al organismo |
 | identified_rank | String | 14 posibles valores | Categoría taxonómica a la que pertenece el hayazgo |
-| identified_no | String |  | ID del nombre con el que se ha identificado al organismo |
 | accepted_name | String |  | Nombre final que se le ha dado al organismo |
-| accepted_no | String |  | ID del nombre final que se le ha dado al organismo. Puede coincidir con *identified_no* |
 | early_interval | String | 44 posibles valores | Intervalo geológico inicial del hayazgo, en base a los estándares proporcionados por la <a href="http://www.stratigraphy.org/">Comisión Internacional de Estratigrafía</a> |
 | max_ma | Number | 70.00 - 260.00 | Edad máxima del hayazgo (en millones de años) |
 | min_ma | Number | 60.00 - 250.00 | Edad mínima del hayazgo (en millones de años) |
