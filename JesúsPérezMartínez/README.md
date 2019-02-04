@@ -196,6 +196,7 @@ Ontologías base:
 | early_interval | skos:Concept |
 | identified_rank | dbo:Taxon |
 | early_interval | dbc:Geological_ages |
+| accepted_name | dbo:Eukaryote |
 ### 2.7. Publicación
 ## 3. Aplicación y explotación
 ## 4. Conclusiones
