@@ -187,6 +187,9 @@ Ontologías base:
 * Lugares: https://schema.org/Place
 * Coordenadas: https://schema.org/GeoCoordinates
 ### 2.5. Proceso de transformación
+
+cells["early_interval"].value+cells["reference_no"].value+cells["state"].value+cells["latlng_precision"].value+cells["formation"].value+cells["environment"].value
+
 ### 2.6. Enlazado
 | Nombre de la columna | Clase enlazada |
 |----------------------|------|
