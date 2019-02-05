@@ -190,6 +190,14 @@ Ontologías base:
 
 cells["early_interval"].value+cells["reference_no"].value+cells["state"].value+cells["latlng_precision"].value+cells["formation"].value+cells["environment"].value
 
+https://sites.temple.edu/tudsc/2016/12/13/preparing-data-with-openrefine-part-ii-assign-unique-numerical-identifiers/
+
+http://www.christophermchurch.com/adding-unique-identifiers-in-openrefine/
+
+
+
+
+
 ### 2.6. Enlazado
 | Nombre de la columna | Clase enlazada |
 |----------------------|------|
