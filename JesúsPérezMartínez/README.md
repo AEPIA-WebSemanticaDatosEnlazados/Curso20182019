@@ -187,8 +187,11 @@ Ontologías base:
 * Lugares: https://schema.org/Place
 * Coordenadas: https://schema.org/GeoCoordinates
 ### 2.5. Proceso de transformación
+Creación de columna location:
 
 cells["early_interval"].value+cells["reference_no"].value+cells["state"].value+cells["latlng_precision"].value+cells["formation"].value+cells["environment"].value
+
+Creación de columna location_id:
 
 https://sites.temple.edu/tudsc/2016/12/13/preparing-data-with-openrefine-part-ii-assign-unique-numerical-identifiers/
 
