@@ -186,6 +186,18 @@ Ontologías base:
 * Litología: http://dati.isprambiente.it/ontology/core/#lithologyType
 * Lugares: https://schema.org/Place
 * Coordenadas: https://schema.org/GeoCoordinates
+
+http://visualdataweb.de/validator/validate
+
+OWL 2 Validation Report
+Summary
+
+The ontology and all of its imports are in the OWL 2 profile
+Imports Closure
+Ontology IRI	Physical URI
+OntologyID(OntologyIRI(<http://paleosw.org/vocabulary>))	
+
+
 ### 2.5. Proceso de transformación
 Creación de columna location:
 
