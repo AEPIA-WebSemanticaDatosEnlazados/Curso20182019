@@ -193,8 +193,11 @@ OWL 2 Validation Report
 Summary
 
 The ontology and all of its imports are in the OWL 2 profile
+
 Imports Closure
-Ontology IRI	Physical URI
+
+Ontology IRI	---------------------------------------  Physical URI
+
 OntologyID(OntologyIRI(<http://paleosw.org/vocabulary>))	
 
 
