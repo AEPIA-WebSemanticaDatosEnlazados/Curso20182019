@@ -180,12 +180,10 @@ A continuación, definimos la estrategia de nombrado de recursos siguiendo las i
 
 ### 2.4. Desarrollo del vocabulario
 
-Ontologías base:
-* Taxones: http://lod.taxonconcept.org/ontology/taxon.owl#Taxon
-* Era geológica y ¿formación estrato?: http://resource.geosciml.org/ontology/timescale/gts#GeologicTimescale
-* Litología: http://dati.isprambiente.it/ontology/core/#lithologyType
-* Lugares: https://schema.org/Place
-* Coordenadas: https://schema.org/GeoCoordinates
+Tras realizar una búsqueda en <a href="https://lov.linkeddata.es">LOV</a>, se ha llegado a la conclusión de que se van a usar los siguientes vocabularios específicos como base, a parte de los ya bien conocidos como por ejemplo el vocabulario OWL, FOAF o SCHEMA.
+* <a href="http://dbpedia.org/ontology/">DBO</a>: ontología de DBpedia, con la que representaremos el taxón al que pertenece el fósil (en el caso de que haya sido posible su identificación).
+* <a href="http://resource.geosciml.org/ontology/timescale/gts">GTS</a>: vocabulario creado para representar conceptos relacionados con la escala de tiempo geológica. Lo usaremos para representar los datos referentes al estrato, era geológica y al tipo de litología.
+
 
 http://visualdataweb.de/validator/validate
 
