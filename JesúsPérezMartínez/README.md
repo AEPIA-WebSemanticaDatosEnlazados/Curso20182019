@@ -230,6 +230,89 @@ A partir de este punto, procedemos a crear la columna *location_id*, siguiendo l
 * Seleccionamos la opción *Blank down* y cambiamos al modo *records*
 * Creamos una nueva columna a partir de *location*, llamada *location_id* y haciendo uso de la siguiente sentencia GREL: *"location_"+row.record.index+1*
 
+Las siguientes transformaciones se realizan creando un esqueleto RDF dentro de OpenRefine. Comenzaremos creando una serie de nodos raíz que nos ayudarán en nuestro proceso de traducción:
+* Nodo **plsw:animal**: cuya URI vendrá dada por la columna *occurrence_no*.
+  * Object Properties:
+  
+    | Nombre | Columna a enlazar |
+    | ------ | ----------------- |
+    | plsw:ID_collection | collection_no |
+    | plsw:ID_name | accepted_no |
+    | plsw:name | accepted_name |
+    | owl:sameAs | dbo:Eukaryote |
+    | plsw:hasTaxon | identified_rank |
+    | plsw:hasAuthorizer | authorizer_no |
+    | plsw:hasEnterer | enterer_no |
+    | plsw:hasModifier | modifier_no |
+    | plsw:hasPlace | location_id |
+  
+* Nodo **dbo:Taxon**: cuya URI vendrá dada por la columna *identified_rank*.
+  * Object Properties:
+
+      | Nombre | Columna a enlazar |
+      | ------ | ----------------- |
+      | owl:sameAs | dbo:Taxon |
+
+* Tres nodos **foaf:Person**: que representarán a los tres tipos de autores identificados en PBDB.
+  * Nodo **authorizer**: con URI representada por la columna *authorizer_no*.
+    * Object Properties:
+
+      | Nombre | Columna a enlazar |
+      | ------ | ----------------- |
+      | owl:sameAs | authorizer |
+      
+  * Nodo **enterer**: con URI representada por la columna *enterer_no*.
+    * Object Properties:
+    
+      | Nombre | Columna a enlazar |
+      | ------ | ----------------- |
+      | owl:sameAs | enterer |
+      
+  * Nodo **modifier**: con URI representada por la columna *modifier_no*.
+    * Object Properties:
+    
+      | Nombre | Columna a enlazar |
+      | ------ | ----------------- |
+      | owl:sameAs | modifier |
+  
+* Nodo **plsw:location**: cuya URI vendrá definida por la columna *location_id*, calculada previamente.
+  * Object Properties:
+  
+    | Nombre | Columna a enlazar |
+    | ------ | ----------------- |
+    | plsw:ID_collection | collection_no |
+    | plsw:ID_name | accepted_no |
+    | plsw:name | accepted_name |
+    | owl:sameAs | dbo:Eukaryote |
+    | plsw:hasTaxon | identified_rank |
+    | plsw:hasAuthorizer | authorizer_no |
+    | plsw:hasEnterer | enterer_no |
+    | plsw:hasModifier | modifier_no |
+    | plsw:hasPlace | location_id |
+    
+* Dos nodos **schema:Place**: que representarán a las provincias y los municipios (state y county respectivamente).
+  * Nodo **state**: con URI representada por la columna *state*.
+    * Object Properties:
+      
+      | Nombre | Columna a enlazar |
+      | ------ | ----------------- |
+      | owl:sameAs | schema:Place |
+      
+  * Nodo **county**: con URI representada por la columna *county*.
+    * Object Properties:
+      
+      | Nombre | Columna a enlazar |
+      | ------ | ----------------- |
+      | owl:sameAs | Municipality |
+      
+* Nodo **schema:AddressCountry**: cuya URI vendrá definida por la columna *cc*.
+  * Object Properties:
+  
+    | Nombre | Columna a enlazar |
+    | ------ | ----------------- |
+    | owl:sameAs | schema:AddressCountry |
+      
+  
 https://sites.temple.edu/tudsc/2016/12/13/preparing-data-with-openrefine-part-ii-assign-unique-numerical-identifiers/
 
 http://www.christophermchurch.com/adding-unique-identifiers-in-openrefine/
