@@ -280,15 +280,18 @@ Las siguientes transformaciones se realizan creando un esqueleto RDF dentro de O
   
     | Nombre | Columna a enlazar |
     | ------ | ----------------- |
-    | plsw:ID_collection | collection_no |
-    | plsw:ID_name | accepted_no |
-    | plsw:name | accepted_name |
-    | owl:sameAs | dbo:Eukaryote |
-    | plsw:hasTaxon | identified_rank |
-    | plsw:hasAuthorizer | authorizer_no |
-    | plsw:hasEnterer | enterer_no |
-    | plsw:hasModifier | modifier_no |
-    | plsw:hasPlace | location_id |
+    | plsw:hasCountryCode | cc |
+    | plsw:hasState | state |
+    | plsw:hasCounty | county |
+    | schema:latitude | lat |
+    | schema:longitude | lng |
+    | schema:Place | formation |
+    | gts:manifestedBy | stratscale |
+    | plsw:hasEra | early_interval |
+    | plsw:hasLithology | lithology_main |
+    | plsw:max_ma | max_ma |
+    | plsw:min_ma | min_ma | 
+    | plsw:environment | environment |
     
 * Dos nodos **schema:Place**: que representarán a las provincias y los municipios (state y county respectivamente).
   * Nodo **state**: con URI representada por la columna *state*.
@@ -311,26 +314,36 @@ Las siguientes transformaciones se realizan creando un esqueleto RDF dentro de O
     | Nombre | Columna a enlazar |
     | ------ | ----------------- |
     | owl:sameAs | schema:AddressCountry |
-      
+    
+* Nodo **plsw:hasLithology**: cuya URI vendrá definida por la columna *lithology_main*.
+  * Object Properties:
   
-https://sites.temple.edu/tudsc/2016/12/13/preparing-data-with-openrefine-part-ii-assign-unique-numerical-identifiers/
-
-http://www.christophermchurch.com/adding-unique-identifiers-in-openrefine/
-
-
-
+    | Nombre | Columna a enlazar |
+    | ------ | ----------------- |
+    | owl:sameAs | yago:Material |
+    
+* Nodo **plsw:hasEra**: cuya URI vendrá definida por la columna *early_interval*.
+  * Object Properties:
+  
+    | Nombre | Columna a enlazar |
+    | ------ | ----------------- |
+    | owl:sameAs | dbc:GeologicalAges |
 
 
 ### 2.6. Enlazado
-| Nombre de la columna | Clase enlazada |
-|----------------------|------|
-| state | schema:Place |
-| county | yago:Municipality108626283 |
-| lithology_main | yago:Material114580897 |
-| early_interval | skos:Concept |
-| identified_rank | dbo:Taxon |
-| early_interval | dbc:Geological_ages |
-| accepted_name | dbo:Eukaryote |
+
+El elevado número de columnas de nuestro *dataset* nos permiten un gran número de valores a enlazar con la web semántica actual. Destaca la gran cantidad de lugares, donde podemos enlazar provincias y municipios españoles, así como al propio país. También es destacable la información geológica disponible, como las eras geológicas o los compuestos del estrato, y la información de carácter biológico, tal como el taxón y el nombre del animal. En total se han enlazado siete columnas, dando lugar a un dataset final muy relacionado con los recursos externos que podemos encontrar. 
+
+| Nombre de la columna | Clase a buscar | Nombre de la nueva columna |
+|----------------------|------|-----------|
+| cc | schema:AddressCountry | schema:AddressCountry |
+| state | schema:Place | schema:Place |
+| county | schema:Place | Municipality |
+| lithology_main | yago:Material114580897 | yago:Material |
+| early_interval | skos:Concept | dbc:GeologicalAges |
+| identified_rank | dbo:Taxon |  dbo:Taxon |
+| accepted_name | dbo:Eukaryote | dbo:Eukaryote |
+
 ### 2.7. Publicación
 ## 3. Aplicación y explotación
 ## 4. Conclusiones
