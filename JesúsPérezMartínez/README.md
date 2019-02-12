@@ -205,8 +205,8 @@ Este vocabulario contempla una serie de *Object properties*. En la siguiente tab
 | latitude | http://schema.org/latitude | plsw: location | Definido por su vocabulario | Definido por su vocabulario. |
 | longitude | http://schema.org/longitude | plsw: location | Definido por su vocabulario | Definido por su vocabulario. |
 | formation | http://schema.org/Place | plsw:location | Definido por su vocabulario | Formación geológica en la que se ha encontrado el fósil. |
-| era | http://resource.geosciml.org/ontology/timescale/gts#era | plsw:location | Definido por su vocabulario | Definido por su vocabulario. |
-| stratotype | http://resource.geosciml.org/ontology/timescale/gts#stratotype | plsw:location | Definido por su vocabulario | Definido por su vocabulario. |
+| hasEra | http://paleosw.org/vocabulary#hasEra | plsw:location | gts:era | Era geológica del estrato al que pertenece el fósil. |
+| hasLithology | http://paleosw.org/vocabulary#hasLithology | plsw:location | gts:stratotype | Litología principal del estrato al que pertenece el fósil. |
 | manifestedBy | http://resource.geosciml.org/ontology/timescale/gts#manifestedBy | plsw:location | Definido por su vocabulario. | Definido por su vocabulario |
 | hasState | http://paleosw.org/vocabulary#hasState | plsw: location | schema:Place | Provincia donde se ha realizado el hayazgo. |
 | hasCounty | http://paleosw.org/vocabulary#hasCounty | plsw:location | schema:Place | Municipio donde se ha realizado el hayazgo. |
