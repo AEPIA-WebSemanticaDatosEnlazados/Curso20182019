@@ -193,6 +193,26 @@ Este vocabulario contempla una serie de *Object properties*. En la siguiente tab
 | Nombre | URI | Dominio | Rango | Descripción |
 |--------|-----|---------|-------|-------------|
 | ID_collection | http://paleosw.org/vocabulary#ID_collection | plsw:animal | rdf:literal | ID de la colección (a la que pertenece el fósil). Es la misma que la dada por The Paleobiology Database. |
+| name | http://paleosw.org/vocabulary#name | plsw:animal | rdf:literal | Nombre aceptado para el animal. |
+| ID_name | http://paleosw.org/vocabulary#ID_name | plsw:animal | rdf:literal | ID del nombre aceptado para el animal. Es el mismo que el proporcionado por The Paleobiology Database. |
+| hasTaxon | http://paleosw.org/vocabulary#hasTaxon | plsw:animal | dbo:Taxon | Taxón identificado para el animal |
+| hasAuthorizer | http://paleosw.org/vocabulary#hasAuthorizer | plsw:animal | foaf:Person | ID de la persona que autorizada introducir el fósil en The Paleobiology Database. |
+| hasEnterer | http://paleosw.org/vocabulary#hasEnterer | plsw:animal | foaf:Person | ID de la persona que introdujo el fósil en The Paleobiology Database. |
+| hasModifier | http://paleosw.org/vocabulary#hasModifier | plsw:animal | foaf:Person | ID de la persona que puede modificar el registro del fósil en The Paleobiology Database. |
+| hasPlace | http://paleosw.org/vocabulary#hasPlace | plsw:animal | plsw:location | Información sobre la localización en la que se ha descubierto el fósil. | 
+| hasCountryCode | http://paleosw.org/vocabulary#hasCountryCode | plsw:location | schema:AddressCountry | Código de país de la localización. |
+| environment | http://paleosw.org/vocabulary#environment | plsw:location | rdf:literal | Tipo de entorno en el que se ha encontrado el fósil. |
+| latitude | http://schema.org/latitude | plsw: location | Definido por su vocabulario | Definido por su vocabulario. |
+| longitude | http://schema.org/longitude | plsw: location | Definido por su vocabulario | Definido por su vocabulario. |
+| formation | http://schema.org/Place | plsw:location | Definido por su vocabulario | Formación geológica en la que se ha encontrado el fósil. |
+| era | http://resource.geosciml.org/ontology/timescale/gts#era | plsw:location | Definido por su vocabulario | Definido por su vocabulario. |
+| stratotype | http://resource.geosciml.org/ontology/timescale/gts#stratotype | plsw:location | Definido por su vocabulario | Definido por su vocabulario. |
+| manifestedBy | http://resource.geosciml.org/ontology/timescale/gts#manifestedBy | plsw:location | Definido por su vocabulario. | Definido por su vocabulario |
+| hasState | http://paleosw.org/vocabulary#hasState | plsw: location | schema:Place | Provincia donde se ha realizado el hayazgo. |
+| hasCounty | http://paleosw.org/vocabulary#hasCounty | plsw:location | schema:Place | Municipio donde se ha realizado el hayazgo. |
+| max_ma | http://paleosw.org/vocabulary#max_ma | plsw:location | xsd:double | Máximo número de millones de años del estrato. |
+| min_ma | http://paleosw.org/vocabulary#min_ma | plsw:location | xsd:double | Mínimo número de millones de años del estrato. |
+
 
 http://visualdataweb.de/validator/validate
 
