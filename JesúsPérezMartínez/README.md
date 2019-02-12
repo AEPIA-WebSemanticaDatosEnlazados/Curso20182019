@@ -188,6 +188,12 @@ Nuestro vocabulario tendrá el prefijo **plsw**, y estará compuesto por dos cla
 * **Animal**: subclase de *owl:Thing*. Es la clase principal del vocabulario ya que representa de forma unívoca un animal fosilizado dentro de un yacimiento determinado. Su nombre de recurso (o *resource name*) viene dado por el que asigna PBDB para cada fósil (occurrence number).
 * **Location**: clase secundaria del vocabulario que recoge de forma unívoca los datos de un yacimiento, o de varias secciones de éste en el caso de que las tuviera. Su nombre de recurso proviene de la creación de un nuevo ID a partir de la concatenación de varias columnas, dado que PBDB no nos permite identificar de forma unívoca cada lugar. El proceso para crear este nuevo ID se describe más adelante.
 
+Este vocabulario contempla una serie de *Object properties*. En la siguiente tabla se definen de forma más detallada junto a su rango, dominio, descripción y URI. Estos datos aparecen en formato RDFs en el fichero *vocabulary.rdf* dentro de la carpeta con su mismo nombre de este repositorio.
+
+| Nombre | URI | Dominio | Rango | Descripción |
+|--------|-----|---------|-------|-------------|
+| ID_collection | http://paleosw.org/vocabulary#ID_collection | plsw:animal | rdf:literal | ID de la colección (a la que pertenece el fósil). Es la misma que la dada por The Paleobiology Database. |
+
 http://visualdataweb.de/validator/validate
 
 OWL 2 Validation Report
