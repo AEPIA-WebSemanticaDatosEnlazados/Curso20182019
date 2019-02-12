@@ -184,7 +184,7 @@ Tras realizar una búsqueda en <a href="https://lov.linkeddata.es">LOV</a>, se h
 * <a href="http://dbpedia.org/ontology/">DBO</a>: ontología de DBpedia, con la que representaremos el taxón al que pertenece el fósil (en el caso de que haya sido posible su identificación).
 * <a href="http://resource.geosciml.org/ontology/timescale/gts">GTS</a>: vocabulario creado para representar conceptos relacionados con la escala de tiempo geológica. Lo usaremos para representar los datos referentes al estrato, era geológica y al tipo de litología.
 
-Nuestro vocabulario tendrá el prefijo **plsw**, y estará compuesto por dos clases relacionadas entre sí:
+Nuestro vocabulario se ha desarrollado haciendo uso de la herramienta <a href="http://neon-toolkit.org">NeOn Toolkit</a>, siguiendo el estándar OWL 2. Este vocabulario tiene el prefijo **plsw**, y está compuesto por dos clases relacionadas entre sí:
 * **Animal**: subclase de *owl:Thing*. Es la clase principal del vocabulario ya que representa de forma unívoca un animal fosilizado dentro de un yacimiento determinado. Su nombre de recurso (o *resource name*) viene dado por el que asigna PBDB para cada fósil (occurrence number).
 * **Location**: clase secundaria del vocabulario que recoge de forma unívoca los datos de un yacimiento, o de varias secciones de éste en el caso de que las tuviera. Su nombre de recurso proviene de la creación de un nuevo ID a partir de la concatenación de varias columnas, dado que PBDB no nos permite identificar de forma unívoca cada lugar. El proceso para crear este nuevo ID se describe más adelante.
 
@@ -213,19 +213,9 @@ Este vocabulario contempla una serie de *Object properties*. En la siguiente tab
 | max_ma | http://paleosw.org/vocabulary#max_ma | plsw:location | xsd:double | Máximo número de millones de años del estrato. |
 | min_ma | http://paleosw.org/vocabulary#min_ma | plsw:location | xsd:double | Mínimo número de millones de años del estrato. |
 
+Si usamos el <a href="http://visualdataweb.de/validator/validate">validador online</a> que proporciona la Universidad de Manchester para ontologías en OWL 2, obtenemos una validación positiva acompañada por el siguiente mensaje:
 
-http://visualdataweb.de/validator/validate
-
-OWL 2 Validation Report
-Summary
-
-The ontology and all of its imports are in the OWL 2 profile
-
-Imports Closure
-
-Ontology IRI	---------------------------------------  Physical URI
-
-OntologyID(OntologyIRI(<http://paleosw.org/vocabulary>))	
+*The ontology and all of its imports are in the OWL 2 profile*
 
 
 ### 2.5. Proceso de transformación
