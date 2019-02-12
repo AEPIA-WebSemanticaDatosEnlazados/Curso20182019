@@ -219,11 +219,16 @@ Si usamos el <a href="http://visualdataweb.de/validator/validate">validador onli
 
 
 ### 2.5. Proceso de transformación
-Creación de columna location:
 
-cells["early_interval"].value+cells["reference_no"].value+cells["state"].value+cells["latlng_precision"].value+cells["formation"].value+cells["environment"].value
+Tal y como comentábamos anteriormente, la transformación más compleja que se ha realizado corresponde a la necesaria para crear un identificador único para cada localización. Este ID debe contemplar la presencia de yacimientos de grandes dimensiones, donde podemos encontrar diversas formaciones y entornos. Por lo tanto, haciendo uso de la herramienta OpenRefine, crearemos una columna denominada *location* que sea la concatenación de los valores de las siguientes columnas para un registro dado, a partir de la siguiente sentencia GREL:
 
-Creación de columna location_id:
+*cells["early_interval"].value+cells["reference_no"].value+cells["state"].value+cells["latlng_precision"].value+cells["formation"].value+cells["environment"].value*
+
+A partir de este punto, procedemos a crear la columna *location_id*, siguiendo los siguientes pasos:
+* Movemos la columna *location*, de tal forma que quede la primera.
+* Ordenamos la columna location.
+* Seleccionamos la opción *Blank down* y cambiamos al modo *records*
+* Creamos una nueva columna a partir de *location*, llamada *location_id* y haciendo uso de la siguiente sentencia GREL: *"location_"+row.record.index+1*
 
 https://sites.temple.edu/tudsc/2016/12/13/preparing-data-with-openrefine-part-ii-assign-unique-numerical-identifiers/
 
