@@ -171,7 +171,7 @@ Para concluir este punto, representaremos más en detalle el significado y algun
 
 ### 2.3. Estrategia de nombrado
 
-A continuación, definimos la estrategia de nombrado de recursos siguiendo las indicaciones habituales que definen el uso del caracter almohadilla para términos ontológicos, y la barra inclinada para individuos. A continuación aparece más detalladamente con sus URIs correspondientes:
+A continuación, definimos la estrategia de nombrado de recursos siguiendo las indicaciones habituales que definen el uso del caracter almohadilla para términos ontológicos, y la barra inclinada para individuos. Aquí aparece más detalladamente con sus URIs correspondientes:
 * **Dominio**: http://paleosw.org/
 * **Ruta para términos ontológicos**: http://paleosw.org/vocabulary#
 * **Patrón para términos ontológicos**: http://paleosw.org/vocabulary#<term_name>
@@ -185,8 +185,8 @@ Tras realizar una búsqueda en <a href="https://lov.linkeddata.es">LOV</a>, se h
 * <a href="http://resource.geosciml.org/ontology/timescale/gts">GTS</a>: vocabulario creado para representar conceptos relacionados con la escala de tiempo geológica. Lo usaremos para representar los datos referentes al estrato, era geológica y al tipo de litología.
 
 Nuestro vocabulario se ha desarrollado haciendo uso de la herramienta <a href="http://neon-toolkit.org">NeOn Toolkit</a>, siguiendo el estándar OWL 2. Este vocabulario tiene el prefijo **plsw**, y está compuesto por dos clases relacionadas entre sí:
-* **Animal**: subclase de *owl:Thing*. Es la clase principal del vocabulario ya que representa de forma unívoca un animal fosilizado dentro de un yacimiento determinado. Su nombre de recurso (o *resource name*) viene dado por el que asigna PBDB para cada fósil (occurrence number).
-* **Location**: clase secundaria del vocabulario que recoge de forma unívoca los datos de un yacimiento, o de varias secciones de éste en el caso de que las tuviera. Su nombre de recurso proviene de la creación de un nuevo ID a partir de la concatenación de varias columnas, dado que PBDB no nos permite identificar de forma unívoca cada lugar. El proceso para crear este nuevo ID se describe más adelante.
+* **Animal**: subclase de *owl:Thing*. Es la clase principal del vocabulario, ya que representa de forma unívoca un animal fosilizado dentro de un yacimiento determinado. Su nombre de recurso (o *resource name*) viene dado por el que asigna PBDB para cada fósil (occurrence number).
+* **Location**: clase secundaria del vocabulario que recoge de forma unívoca los datos de un yacimiento, o de varias secciones de éste en el caso de que las tuviera. Su nombre de recurso proviene de la creación de un nuevo ID a partir de la concatenación de varias columnas, dado que PBDB no nos permite identificar de forma unívoca cada lugar. El proceso para crear este nuevo ID se describe más adelante, en el apartado 2.5.
 
 Este vocabulario contempla una serie de *Object properties*. En la siguiente tabla se definen de forma más detallada junto a su rango, dominio, descripción y URI. Estos datos aparecen en formato RDFs en el fichero *vocabulary.rdf* dentro de la carpeta con su mismo nombre de este repositorio.
 
@@ -220,7 +220,7 @@ Si usamos el <a href="http://visualdataweb.de/validator/validate">validador onli
 
 ### 2.5. Proceso de transformación
 
-Tal y como comentábamos anteriormente, la transformación más compleja que se ha realizado corresponde a la necesaria para crear un identificador único para cada localización. Este ID debe contemplar la presencia de yacimientos de grandes dimensiones, donde podemos encontrar diversas formaciones y entornos. Por lo tanto, haciendo uso de la herramienta OpenRefine, crearemos una columna denominada *location* que sea la concatenación de los valores de las siguientes columnas para un registro dado, a partir de la siguiente sentencia GREL:
+Tal y como comentábamos anteriormente, la transformación más compleja que se ha realizado corresponde a la necesaria para crear un identificador único para cada localización. Este ID debe contemplar la presencia de yacimientos de grandes dimensiones, donde podemos encontrar diversas formaciones y entornos. Por lo tanto, haciendo uso de la herramienta *OpenRefine*, crearemos una columna denominada *location* que sea la concatenación de los valores de las siguientes columnas para un registro dado, a partir de la siguiente sentencia GREL:
 
 *cells["early_interval"].value+cells["reference_no"].value+cells["state"].value+cells["latlng_precision"].value+cells["formation"].value+cells["environment"].value*
 
@@ -230,7 +230,7 @@ A partir de este punto, procedemos a crear la columna *location_id*, siguiendo l
 * Seleccionamos la opción *Blank down* y cambiamos al modo *records*
 * Creamos una nueva columna a partir de *location*, llamada *location_id* y haciendo uso de la siguiente sentencia GREL: *"location_"+row.record.index+1*
 
-Las siguientes transformaciones se realizan creando un esqueleto RDF dentro de OpenRefine. Comenzaremos creando una serie de nodos raíz que nos ayudarán en nuestro proceso de traducción:
+Las siguientes transformaciones se realizan creando un esqueleto RDF dentro de *OpenRefine*. Comenzaremos creando una serie de nodos raíz que nos ayudarán en nuestro proceso de traducción:
 * Nodo **plsw:animal**: cuya URI vendrá dada por la columna *occurrence_no*.
   * Object Properties:
   
@@ -332,7 +332,7 @@ Las siguientes transformaciones se realizan creando un esqueleto RDF dentro de O
 
 ### 2.6. Enlazado
 
-El elevado número de columnas de nuestro *dataset* nos permiten un gran número de valores a enlazar con la web semántica actual. Destaca la gran cantidad de lugares, donde podemos enlazar provincias y municipios españoles, así como al propio país. También es destacable la información geológica disponible, como las eras geológicas o los compuestos del estrato, y la información de carácter biológico, tal como el taxón y el nombre del animal. En total se han enlazado siete columnas, dando lugar a un dataset final muy relacionado con los recursos externos que podemos encontrar. 
+El elevado número de columnas de nuestro *dataset* nos permiten un gran número de valores a enlazar con la web semántica actual. Destaca la gran cantidad de lugares, donde podemos enlazar provincias y municipios españoles, así como al propio país. También es remarcable la información geológica disponible, tales como las eras geológicas o los compuestos del estrato, y la información de carácter biológico, a la que pertenecen el taxón y el nombre del animal. En total se han enlazado siete columnas, dando lugar a un dataset final muy relacionado con los recursos externos que podemos encontrar. 
 
 | Nombre de la columna | Clase a buscar | Nombre de la nueva columna |
 |----------------------|------|-----------|
@@ -343,6 +343,8 @@ El elevado número de columnas de nuestro *dataset* nos permiten un gran número
 | early_interval | skos:Concept | dbc:GeologicalAges |
 | identified_rank | dbo:Taxon |  dbo:Taxon |
 | accepted_name | dbo:Eukaryote | dbo:Eukaryote |
+
+Una vez que se ha creado el enlazado y tenemos la estructura de nuestro fichero RDF, podemos exportarlo con *OpenRefine* en formato **RDF/XML**. Si entramos a inspeccionar el nuevo fichero, encontraremos que *OpenRefine* ha introducido muchas tripletas repetidas, dado que no realiza un filtrado posterior. Por este motivo, crearemos un pequeño programa en *Jena* que lea el fichero, lo cargue en memoria y posteriormente vuelva a escribirlo. El código de este programa se puede encontrar en el fichero *reduce.java*, dentro de la carpeta *Utils* de este mismo repositorio.
 
 ### 2.7. Publicación
 ## 3. Aplicación y explotación
