@@ -31,7 +31,7 @@ public class Ejercicio8 {
 		OutputStream out;
 		
 		try {
-			out = new FileOutputStream("conversion.ttl");
+			out = new FileOutputStream("PaleoRegisters.ttl");
 			model.write(out, "TURTLE");
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
@@ -39,7 +39,7 @@ public class Ejercicio8 {
 		}
 		
 		try {
-			out = new FileOutputStream("conversion.rdf");
+			out = new FileOutputStream("PaleoRegisters.rdf");
 			model.write(out, "RDF/XML-ABBREV");
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
