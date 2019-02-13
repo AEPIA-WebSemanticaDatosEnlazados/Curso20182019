@@ -27,9 +27,11 @@ public class Ejercicio8 {
 		if (in == null)
 			throw new IllegalArgumentException("Fichero: "+filename+" no encontrado");
 		
+		//Leemos el fichero RDF/XML
 		model.read(in, null);
 		OutputStream out;
 		
+		// Escribimos el contenido del fichero en formato TURTLE y RDF/XML para reducir el original
 		try {
 			out = new FileOutputStream("PaleoRegisters.ttl");
 			model.write(out, "TURTLE");
@@ -45,20 +47,6 @@ public class Ejercicio8 {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
-		//Leemos el fichero RDF/XML
-		
-		
-		//Escribimos por pantalla
-		 
-		
-		// ** TAREA 1.1: Escribir el modelo en formato Turtle **
-		//System.out.println("\n Formato turtle:\n");
-		//model.write(System.out, "TURTLE");
-		
-		// Otros formatos
-				//System.out.println("\n Formato JSON-LD:\n");
-				//model.write(System.out, "JSON-LD");
 				
 	}
 }
