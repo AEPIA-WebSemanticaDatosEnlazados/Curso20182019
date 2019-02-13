@@ -188,7 +188,7 @@ Nuestro vocabulario se ha desarrollado haciendo uso de la herramienta <a href="h
 * **Animal**: subclase de *owl:Thing*. Es la clase principal del vocabulario, ya que representa de forma unívoca un animal fosilizado dentro de un yacimiento determinado. Su nombre de recurso (o *resource name*) viene dado por el que asigna PBDB para cada fósil (occurrence number).
 * **Location**: clase secundaria del vocabulario que recoge de forma unívoca los datos de un yacimiento, o de varias secciones de éste en el caso de que las tuviera. Su nombre de recurso proviene de la creación de un nuevo ID a partir de la concatenación de varias columnas, dado que PBDB no nos permite identificar de forma unívoca cada lugar. El proceso para crear este nuevo ID se describe más adelante, en el <a href="https://github.com/Xachap/Curso20182019/blob/master/Jes%C3%BAsP%C3%A9rezMart%C3%ADnez/README.md#25-proceso-de-transformaci%C3%B3n">apartado 2.5</a>.
 
-Este vocabulario contempla una serie de *Object properties*. En la siguiente tabla se definen de forma más detallada junto a su rango, dominio, descripción y URI. Estos datos aparecen en formato RDFs en el fichero *vocabulary.rdf* dentro de la carpeta con su mismo nombre de este repositorio.
+Este vocabulario contempla una serie de *Object properties*. En la siguiente tabla se definen de forma más detallada junto a su rango, dominio, descripción y URI. Estos datos aparecen en formato RDFs en el fichero <a href="https://github.com/Xachap/Curso20182019/blob/master/Jes%C3%BAsP%C3%A9rezMart%C3%ADnez/Vocabulario/vocabulary.owl">*vocabulary.owl*</a> dentro de la carpeta con su mismo nombre de este repositorio.
 
 | Nombre | URI | Dominio | Rango | Descripción |
 |--------|-----|---------|-------|-------------|
