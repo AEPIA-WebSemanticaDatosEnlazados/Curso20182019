@@ -351,11 +351,42 @@ Una vez que se ha creado el enlazado y tenemos la estructura de nuestro fichero 
 La publicación de los datos generados en el punto anterior la realizaremos en DataHub.io, plataforma que aparece en los contenidos de la asignatura. Para ello, seguiremos los siguientes pasos:
 
 1. Comenzaremos registrándonos en DataHub.io, en este caso con nuestra cuenta de GitHub.
+
+<p align="center">
+<img src="images/p1.jpg"/>
+</p>
+
 2. Para subir contenido a la plataforma, tendremos que descargar una pequeña herramienta de la página. En este caso descargaremos la correspondiente para Windows (versión 0.9.5)
+
+<p align="center">
+<img src="images/p2.jpg"/>
+</p>
+
 3. Seguimos los pasos de instalación que nos indica la web, los cuales corresponden a los siguientes comandos para ejecutar en la terminal de nuestro ordenador:
+
+<p align="center">
+<img src="images/p3.jpg"/>
+</p>
+
+
+**NOTA: tendremos que ejecutar estas órdenes como superusuario**
+
 4. Para asegurarnos de que la herramienta se ha instalado correctamente, ejecutamos el siguiente comando:
+
+    data --version
+    
 5. Antes de subir los datos, accedemos con nuestra cuenta:
+
+<p align="center">
+<img src="images/p4.jpg"/>
+</p>
+
 6. Usamos el comando *push* y seguimos las instrucciones:
+
+<p align="center">
+<img src="images/p5.jpg"/>
+</p>
+
 
 Después de estos pasos, ya está disponible nuestro *dataset*. DataHub nos proporciona una <a href="https://datahub.io/xachap/paleoregisters-spain/v/1">página de información</a>, donde se puede ver como descargar el conjunto de datos de diferentes formas. También crea un <a href="https://datahub.io/xachap/paleoregisters-spain/datapackage.json">enlace directo</a> para descargar la información encapsulada en formato *json*.
 ## 3. Aplicación y explotación
