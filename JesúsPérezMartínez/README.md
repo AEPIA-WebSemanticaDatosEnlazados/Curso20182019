@@ -167,7 +167,6 @@ Para concluir este punto, representaremos más en detalle el significado y algun
 | enterer | String | 28 posibles valores | Nombre de la persona encargada de autorizar añadir el hayazgo en la base de datos |
 | modifier | String | 14 posibles valores | Nombre de la persona encargada de autorizar añadir el hayazgo en la base de datos |
 
-**NOTA: ES POSIBLE QUE LOS DATOS PROPORCIONADOS EN ESTE PUNTO SEAN ELIMINADOS O MODIFICADOS DEPENDIENDO DEL DESARROLLO DEL TRABAJO** 
 
 ### 2.3. Estrategia de nombrado
 
@@ -368,12 +367,19 @@ La publicación de los datos generados en el punto anterior la realizaremos en D
 <img src="images/p3.jpg"/>
 </p>
 
+```
+gzip -d data-win.exe.gz
+move data-win.exe "C:\Windows\System32\data.exe"
+```
+
 
 **NOTA: tendremos que ejecutar estas órdenes como superusuario**
 
 4. Para asegurarnos de que la herramienta se ha instalado correctamente, ejecutamos el siguiente comando:
 
-    data --version
+```
+data --version
+```
     
 5. Antes de subir los datos, accedemos con nuestra cuenta:
 
