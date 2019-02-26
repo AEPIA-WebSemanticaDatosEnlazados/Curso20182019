@@ -347,6 +347,17 @@ El elevado número de columnas de nuestro *dataset* nos permiten un gran número
 Una vez que se ha creado el enlazado y tenemos la estructura de nuestro fichero RDF, podemos exportarlo con *OpenRefine* en formato **RDF/XML**. Si entramos a inspeccionar el nuevo fichero, encontraremos que *OpenRefine* ha introducido muchas tripletas repetidas, dado que no realiza un filtrado posterior. Por este motivo, crearemos un pequeño programa en *Jena* que lea el fichero, lo cargue en memoria y posteriormente vuelva a escribirlo. El código de este programa se puede encontrar en el fichero <a href="https://github.com/Xachap/Curso20182019/blob/master/Jes%C3%BAsP%C3%A9rezMart%C3%ADnez/Utils/reduce.java">*reduce.java*</a>, dentro de la carpeta *Utils* de este mismo repositorio. Los archivos resultantes están en la raíz de este repositorio, y corresponden a <a href="https://github.com/Xachap/Curso20182019/blob/master/Jes%C3%BAsP%C3%A9rezMart%C3%ADnez/PaleoRegisters.ttl">*PaleoRegisters.ttl*</a> y <a href="https://github.com/Xachap/Curso20182019/blob/master/Jes%C3%BAsP%C3%A9rezMart%C3%ADnez/PaleoRegisters.rdf">*PaleoRegisters.rdf*</a>.
 
 ### 2.7. Publicación
+
+La publicación de los datos generados en el punto anterior la realizaremos en DataHub.io, plataforma que aparece en los contenidos de la asignatura. Para ello, seguiremos los siguientes pasos:
+
+1. Comenzaremos registrándonos en DataHub.io, en este caso con nuestra cuenta de GitHub.
+2. Para subir contenido a la plataforma, tendremos que descargar una pequeña herramienta de la página. En este caso descargaremos la correspondiente para Windows (versión 0.9.5)
+3. Seguimos los pasos de instalación que nos indica la web, los cuales corresponden a los siguientes comandos para ejecutar en la terminal de nuestro ordenador:
+4. Para asegurarnos de que la herramienta se ha instalado correctamente, ejecutamos el siguiente comando:
+5. Antes de subir los datos, accedemos con nuestra cuenta:
+6. Usamos el comando *push* y seguimos las instrucciones:
+
+Después de estos pasos, ya está disponible nuestro *dataset*. DataHub nos proporciona una <a href="https://datahub.io/xachap/paleoregisters-spain/v/1">página de información</a>, donde se puede ver como descargar el conjunto de datos de diferentes formas. También crea un <a href="https://datahub.io/xachap/paleoregisters-spain/datapackage.json">enlace directo</a> para descargar la información encapsulada en formato *json*.
 ## 3. Aplicación y explotación
 ## 4. Conclusiones
 ## 5. Bibliografía
