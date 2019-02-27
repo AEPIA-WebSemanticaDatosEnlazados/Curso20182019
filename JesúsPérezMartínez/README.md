@@ -397,7 +397,7 @@ data --version
 Después de estos pasos, ya está disponible nuestro *dataset*. DataHub nos proporciona una <a href="https://datahub.io/xachap/paleoregisters-spain/v/1">página de información</a>, donde se puede ver como descargar el conjunto de datos de diferentes formas. También crea un <a href="https://datahub.io/xachap/paleoregisters-spain/datapackage.json">enlace directo</a> para descargar la información encapsulada en formato *json*.
 ## 3. Aplicación y explotación
 
-Haciendo uso de Jena, se ha construido un pequeño programa que crea cuatro archivos diferentes, uno por cada caso que explicaremos a continuación. Cada archivo se crea en una sección diferente del código, y el objetivo de cada una es el de obtener datos útiles mediante consultas elaboradas al *dataset*. La versión completa del código, así como cada uno de los ficheros generados, se puede encontrar en la carpeta **App** de este mismo repositorio.
+Haciendo uso de Jena, se ha construido un pequeño programa que tiene cuatro partes diferentes, una por cada caso que explicaremos a continuación. Cada sección diferente del código es un caso, y el objetivo de cada uno es el de obtener datos útiles mediante consultas elaboradas al *dataset*. La versión completa del código, se puede encontrar en la carpeta **App** de este mismo repositorio.
 
 1. **Caso 1:**
 
