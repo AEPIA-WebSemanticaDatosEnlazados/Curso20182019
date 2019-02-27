@@ -582,3 +582,8 @@ Haciendo uso de la herramienta OpenRefine y estudiando algunas ontologías que s
 Por último, se ha publicado nuestro conjunto de datos en *DataHub*, y además se ha creado un pequeño programa con Jena para obtener datos de gran utilidad por medio de consultas. Como opinión personal, este ha sido un trabajo muy extenso, pero también muy gratificante. Me ha permitido aprender de primera mano los conceptos vistos a lo largo de la asignatura mientras trabajaba en un contexto que personalmente me apasiona.
 
 ## 5. Bibliografía
+- <a href="https://poliformat.upv.es/portal/site/ESP_0_2617"> **Contenido de la asignatura Web Semántica y Datos Enlazados** </a> (necesita autenticación; Ultima fecha de consulta: 27/02/2019)
+- <a href="https://paleobiodb.org/#/"> **The Paleobiology Database** </a> (ultima fecha de consulta: 27/02/2019)
+- <a href="https://lov.linkeddata.es/dataset/lov/"> **Linked Open Vocabularies** </a> (ultima fecha de consulta: 27/02/2019)
+- <a href="https://datahub.io/"> **DataHub** </a> (ultima fecha de consulta: 27/02/2019)
+- <a href="https://jena.apache.org/documentation/"> **Jena Documentation** </a> (ultima fecha de consulta: 27/02/2019)
