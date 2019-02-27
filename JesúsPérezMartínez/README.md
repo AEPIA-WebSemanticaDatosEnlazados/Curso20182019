@@ -396,5 +396,71 @@ data --version
 
 Después de estos pasos, ya está disponible nuestro *dataset*. DataHub nos proporciona una <a href="https://datahub.io/xachap/paleoregisters-spain/v/1">página de información</a>, donde se puede ver como descargar el conjunto de datos de diferentes formas. También crea un <a href="https://datahub.io/xachap/paleoregisters-spain/datapackage.json">enlace directo</a> para descargar la información encapsulada en formato *json*.
 ## 3. Aplicación y explotación
+
+Haciendo uso de Jena, se ha construido un pequeño programa que crea cuatro archivos diferentes, uno por cada caso que explicaremos a continuación. Cada archivo se crea en una sección diferente del código, y el objetivo de cada una es el de obtener datos útiles mediante consultas elaboradas al *dataset*. La versión completa del código, así como cada uno de los ficheros generados, se puede encontrar en la carpeta **App** de este mismo repositorio.
+
+1. **Caso 1:**
+
+El *Turiasaurus riodevensis* es uno de los dinosaurios más famosos que se han descubierto en nuestro país. Por lo tanto, lanzaremos una consulta para obtener los yacimientos donde se ha encontrado.
+
+```
+// Buscamos aquellos fósiles con dicho nombre
+		StmtIterator iter1 = model.listStatements(null, plsw_name, "Turiasaurus riodevensis");
+		
+		while (iter1.hasNext())
+		{
+			Statement s = iter1.next();
+			Resource r = s.getSubject();
+			
+			// Buscamos yacimientos donde se han encontrado los fósiles
+			StmtIterator iter2 = model.listStatements(r, plsw_hasPlace, (RDFNode) null);
+			
+			while(iter2.hasNext())
+			{
+				Statement st = iter2.next();
+				RDFNode subj = st.getObject();
+				
+				// Imprimimos la información por pantalla
+				System.out.println("Place -> "+subj.toString());
+			}
+		}	
+```
+
+2. **Caso 2:**
+
+La provincia de Cuenca es famosa por sus yacimientos de gran calidad, destacando Las Hoyas como uno de los más importantes del mundo. Con esta consulta obtendremos todos los fósiles que se han descubierto en esta provincia.
+
+```
+// Buscamos aquellos yacimientos que pertenezcan a la provincia de Cuenca
+		iter1 = model.listStatements(null, plsw_hasCounty, cuenca);
+		
+		while (iter1.hasNext())
+		{
+			Statement s = iter1.next();
+			Resource r = s.getSubject();
+			
+			// Buscamos los fósiles que se han encontrado en estos yacimientos
+			StmtIterator iter2 = model.listStatements(null, plsw_hasPlace, r);
+			
+			while(iter2.hasNext())
+			{
+				Statement st = iter2.next();
+				Resource subj = st.getSubject();
+				
+				// Obtenemos el nombre de la especie
+				StmtIterator iter3 = model.listStatements(subj, plsw_name, (RDFNode) null);
+				
+				while(iter3.hasNext())
+				{
+					Statement sta = iter3.next();
+					RDFNode node = sta.getObject();
+					
+					//Imprimimos la información por pantalla
+					System.out.println(node.asLiteral()+" -> "+subj.getURI());
+				}
+			}
+		}
+```
+
 ## 4. Conclusiones
 ## 5. Bibliografía
