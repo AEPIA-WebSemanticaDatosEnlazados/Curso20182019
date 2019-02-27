@@ -462,5 +462,116 @@ La provincia de Cuenca es famosa por sus yacimientos de gran calidad, destacando
 		}
 ```
 
+3. **Caso 3**:
+
+En gran cantidad de ocasiones, es muy difícil identificar la especie exacta del fósil encontrado. Para este caso buscaremos los nombres de los fósiles encontrados en la provincia de Huesca y que hayan sido clasificados en su taxón como "especie".
+
+```
+// Buscamos aquellos yacimientos que pertenezcan a la provincia de Huesca
+		iter1 = model.listStatements(null, plsw_hasCounty, huesca);
+		
+		while (iter1.hasNext())
+		{
+			Statement s = iter1.next();
+			Resource r = s.getSubject();
+			
+			// Buscamos los fósiles que se han encontrado en estos yacimientos
+			StmtIterator iter2 = model.listStatements(null, plsw_hasPlace, r);
+			
+			while(iter2.hasNext())
+			{
+				Statement st = iter2.next();
+				Resource subj = st.getSubject();
+				
+				// Nos quedamos con el taxón de cada fósil
+				StmtIterator iter3 = model.listStatements(subj, plsw_hasTaxon, (RDFNode)null);
+				
+				while(iter3.hasNext())
+				{
+					Statement sta = iter3.next();
+					Resource node = (Resource) sta.getObject();
+					
+					// Filtra por aquellos fósiles que estén identificados como especie
+					if (node.getURI().equals(specie.toString()))
+					{
+						// Obtenemos el nombre de la especie
+						StmtIterator iter4 = model.listStatements(subj, plsw_name, (RDFNode) null);
+						
+						while(iter4.hasNext())
+						{
+							Statement stat = iter4.next();
+							RDFNode nam = stat.getObject();
+							
+							// Imprimimos la información por pantalla
+							System.out.println(node.getURI().substring(29)+" -> "+nam.asLiteral()+" -> "+subj.getURI());
+						}
+					}
+				}
+			}
+		}
+```
+
+4. **Caso 4:**
+
+Nuestro *dataset* nos da una gran cantidad de información sobre los yacimientos. Para este último caso, queremos obtener todos los yacimientos donde se han encontrado terópodos con sus coordenadas geográficas, así como la provincia a la que pertenecen.
+
+```
+// Buscamos los fósiles que tengan de nombre "Theropoda"
+		iter1 = model.listStatements(null, plsw_name, "Theropoda");
+		
+		while (iter1.hasNext())
+		{
+			Statement s = iter1.next();
+			Resource r = s.getSubject();
+			
+			// Buscamos los fósiles que se han encontrado en estos yacimientos
+			StmtIterator iter2 = model.listStatements(r, plsw_hasPlace, (RDFNode) null);
+			
+			while(iter2.hasNext())
+			{
+				Statement st = iter2.next();
+				Resource subj = (Resource) st.getObject();
+				
+				//Buscamos las provincias a la que pertenecen los yacimientos
+				StmtIterator iter3 = model.listStatements(subj, plsw_hasCounty, (RDFNode) null);
+				
+				while(iter3.hasNext())
+				{
+					Statement stat = iter3.next();
+					Resource county = (Resource) stat.getObject();					
+					
+					// Buscamos la latitud del yacimiento
+					StmtIterator iter4 = model.listStatements(subj, latitude, (RDFNode) null);
+					
+					// Las coordenadas pueden no haber sido introducidas, por lo que las inicializamos antes
+					RDFNode lat = null;
+					RDFNode lon = null;
+					
+					while(iter4.hasNext())
+					{
+						Statement state = iter4.next();
+						lat = state.getObject();
+						
+						// Buscamos la longitud del yacimiento
+						StmtIterator iter5 = model.listStatements(subj, longitude, (RDFNode) null);
+						
+						while(iter5.hasNext())
+						{
+							Statement statt = iter5.next();
+							lon = statt.getObject();
+						}
+					}
+					
+					// Tratamos las strings y las mostramos por pantalla
+					String lati = lat.asLiteral().toString().substring(0,6);
+					String longi = lon.asLiteral().toString().substring(0,6);
+					System.out.println(county.getURI().substring(29)+" || Longitude -> "+longi+" Latitude -> "+lati+" || URI -> "+subj.getURI());
+					
+					
+				}
+			}
+		}			
+```
+
 ## 4. Conclusiones
 ## 5. Bibliografía
