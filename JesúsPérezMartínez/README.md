@@ -574,4 +574,11 @@ Nuestro *dataset* nos da una gran cantidad de información sobre los yacimientos
 ```
 
 ## 4. Conclusiones
+
+A lo largo de esta práctica, se han puesto sobre la mesa todos los conceptos vistos durante la asignatura. Comenzando con la selección y el estudio del *dataset* a usar, se ha preparado para su transformación un conjunto de datos perteneciente a *The Paleobiology Database*. Los registros recogidos pertenecen a ocurrencias fósiles de la mitad este de la península ibérica.
+
+Haciendo uso de la herramienta OpenRefine y estudiando algunas ontologías que se pueden encontrar en *Linked Open Vocabularies*, se ha definido una estrategia de nombrado, un vocabulario cuyo prefijo es **plsw**, y el enlazado con información ya presente en la Web Semántica actual. Esta parte, junto al preprocesado de los datos, ha sido la que más tiempo ha llevado dada la extensión del *dataset* y el número de columnas original que contenía.
+
+Por último, se ha publicado nuestro conjunto de datos en *DataHub*, y además se ha creado un pequeño programa con Jena para obtener datos de gran utilidad por medio de consultas. Como opinión personal, este ha sido un trabajo muy extenso, pero también muy gratificante. Me ha permitido aprender de primera mano los conceptos vistos a lo largo de la asignatura mientras trabajaba en un contexto que personalmente me apasiona.
+
 ## 5. Bibliografía
